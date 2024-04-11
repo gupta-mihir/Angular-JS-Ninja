@@ -9,6 +9,9 @@
         </script>
     </head>
     <div ng-controller="NinjaController">
-        <p>{{message}}</p>    
+        <p>{{message}}</p>
+        <ul>
+            <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+        </ul>    
     </div>
 </html>
