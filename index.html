@@ -8,10 +8,20 @@
         angular.module("sample", []);
         </script>
     </head>
-    <div ng-controller="NinjaController">
-        <p>{{message}}</p>
-        <ul>
-            <li ng-repeat="ninja in ninjas">{{ninja}}</li>
-        </ul>    
+    <header ng-include src="'header.html'"></header>
+    <div class="content">
+        <div ng-controller="NinjaController">
+            <button ng-click = "order = 'name'">Order by Name</button>
+            <button ng-click = "order = 'belt'">Order by Belt</button>
+            <input type="text" ng-model="search" placeholder="Search for your Ninja"/>
+            <p>{{message}}</p>
+            <ul>
+            
+                <li ng-repeat="ninja in detailedNinjas | orderBy: order | filter: search" ng-show="ninja.available">
+                   <h3>{{ninja.name}} - {{ninja.rate}}</h3>
+                   <span style="background: {{ninja.belt}}" >{{ninja.belt}} belt</span> 
+                </li>
+            </ul>    
+        </div>
     </div>
-</html>
+</html> 
