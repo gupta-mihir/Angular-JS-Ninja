@@ -1,7 +1,8 @@
-<html lang="en" ng-app="myNinjaApp">
+<html lang="en" ng-app="myMarketplaceApp">
     <head>
         <meta charset="utf-8">
-        <title>Hello</title>
+        <title>Gupta Marketplace</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src = app.js></script>
         <script type="text/javascript">
@@ -10,16 +11,17 @@
     </head>
     <header ng-include src="'header.html'"></header>
     <div class="content">
-        <div ng-controller="NinjaController">
+        <div ng-controller="MarketController">
             <button ng-click = "order = 'name'">Order by Name</button>
-            <button ng-click = "order = 'belt'">Order by Belt</button>
-            <input type="text" ng-model="search" placeholder="Search for your Ninja"/>
+            <button ng-click = "order = 'belt'">Order by Price</button>
+            <input type="text" ng-model="search" placeholder="Search for Items"/>
             <p>{{message}}</p>
             <ul>
             
-                <li ng-repeat="ninja in detailedNinjas | orderBy: order | filter: search" ng-show="ninja.available">
-                   <h3>{{ninja.name}} - {{ninja.rate}}</h3>
-                   <span style="background: {{ninja.belt}}" >{{ninja.belt}} belt</span> 
+                <li ng-repeat="item in detailedItems | orderBy: order | filter: search" ng-show="item.available">
+                   <h3>{{item.name}} - {{item.rate}}</h3>
+                   <div class="remove" ng-click="removeItem(item)">X</div>
+                   <span style="background: {{item.belt}}" >{{item.belt}} </span> 
                 </li>
             </ul>    
         </div>
