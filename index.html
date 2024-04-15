@@ -19,7 +19,8 @@
             <ul>
             
                 <li ng-repeat="item in detailedItems | orderBy: order | filter: search" ng-show="item.available">
-                   <h3>{{item.name}} - {{item.rate}}</h3>
+                   <img src="{{item.thumb}}" style="margin -12px 10px 0 0; float: left; width: 50px">
+                    <h3>{{item.name}} - {{item.rate}}</h3>
                    <div class="remove" ng-click="removeItem(item)">X</div>
                    <span style="background: {{item.belt}}" >{{item.belt}} </span> 
                 </li>

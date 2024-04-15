@@ -19,21 +19,24 @@ myMarketplaceApp.controller('MarketController', ['$scope', function($scope){
     $scope.detailedItems = [
         {
             name: 'Toothbrush',
-            belt: 'Blue',
-            rate: '$10 Million',
-            available: true
+            belt: 'In Stock',
+            rate: '$1.99',
+            available: true,
+            thumb: "img/toothbrush.jpeg"
         },
         {
-            name: 'Sekiro',
-            belt: 'Yellow',
-            rate: '$12 Million',
-            available: true
+            name: 'Shampoo',
+            belt: 'In Stock',
+            rate: '$10.50',
+            available: true,
+            thumb: "img/shampoo.jpeg"
         },
         {
-            name: 'Samurai',
-            belt: 'Black',
-            rate: '$15 Million',
-            available: true
+            name: 'Conditioner',
+            belt: 'In Stock',
+            rate: '$15.99',
+            available: true,
+            thumb: "img/conditioner.jpeg"
         }
     ];
 }]);
